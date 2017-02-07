@@ -4,7 +4,7 @@ RUN yum install -y net-tools epel-release sssd-client && \
     cat /usr/share/zoneinfo/Europe/Paris > /etc/localtime && \
     sed -i 's/^initgroups.*/initgroups: files sss/g' /etc/nsswitch.conf
 
-https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /
+ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /
 ADD rootfs /
 
 ENV TORQUE_VER="6.1.0-3"
