@@ -1,0 +1,19 @@
+containers:
+  moab:
+    image: torque_moab:9.1.0-3
+    build:
+      context: moab
+    run:
+      detach: true
+      hostname: moab
+      env:
+        - SERVICE_42559_NAME=moab
+        - SERVICE_15004_NAME=moab-events
+      publish:
+        - 42559:42559
+        - 15004:15004
+      volume:
+        - /var/lib/sss/pipes:/var/lib/sss/pipes
+        - /var/lib/sss/mc:/var/lib/sss/mc:ro
+        - /NFSfolder/torque/moab/etc:/opt/moab/etc
+        - /NFSfolder/torque/moab/stats:/opt/moab/stats

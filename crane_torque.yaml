@@ -1,0 +1,17 @@
+containers:
+  torque6:
+    image: torque_server:6.1.0-3
+    build:
+      context: torque
+    run:
+      detach: true
+      hostname: torque6
+#      net: host
+      env:
+        - SERVICE_15001_NAME=torque6
+      publish:
+        - 15001:15001
+      volume:
+        - /var/lib/sss/pipes:/var/lib/sss/pipes
+        - /var/lib/sss/mc:/var/lib/sss/mc:ro
+        - /NFSfolder/torque/server_priv:/var/spool/torque/server_priv

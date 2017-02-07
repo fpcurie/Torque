@@ -1,0 +1,7 @@
+PS1="[\t \u@calcsub \W]\$ "
+readonly PS1
+export PS1
+
+TMOUT=300
+readonly TMOUT
+export TMOUT

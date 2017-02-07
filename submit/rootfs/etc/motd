@@ -1,0 +1,4 @@
+== CLUSTER CENTOS (beta) ==
+Need of tests : "qsub -I" (-l mem=50gb,procs=4) for interactive session
+Access on a compute node for debug : forbiden until you have a job running on it
+===========================

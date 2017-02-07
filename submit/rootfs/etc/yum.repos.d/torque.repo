@@ -1,0 +1,5 @@
+[torque]
+name=Torque repository server
+baseurl=http://torque.repo.server/rpmrepos/centos/$releasever/os/$basearch/
+gpgcheck=0
+enabled=1

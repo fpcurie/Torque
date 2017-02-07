@@ -1,0 +1,5 @@
+containers:
+  centosbuild:
+    image: build:1.2
+    build:
+      context: .
