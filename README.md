@@ -17,3 +17,18 @@ For the first time, you will have to create configs of torque and moab (comment 
 
 "Submit" container is not necessary, but offer a light ssh jump server.
 
+For all "plumbing" parts, we are using :
+- Consul
+- Registrator
+- Consul-template
+- Haproxy
+- Keepalived
+
+Each SERVICE_XXXX_NAME=YYY are inserted on consul via registrator (ip:port).
+
+Consul-template, watch YYY to get ip:port, modify haproxy.cfg, and reload haproxy.
+
+Keepalived is for managing vip's.
+
+
+For Torque case, as all port are specifics, haproxy is not used, except for submit container (redirecting port 22 on a vip to anoter port on container. It's prevent conflict with port 22 on host.
